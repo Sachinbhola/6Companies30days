@@ -1,6 +1,6 @@
     vector<vector<string> > Anagrams(vector<string>& list) {
         vector<vector<string>> ans;
-        
+        // map to group on bases of sorted string
         unordered_map<string,vector<string>> m;
         
         for(auto it : list){
