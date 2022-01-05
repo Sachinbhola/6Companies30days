@@ -1,0 +1,45 @@
+string decodeString(string s) {
+        stack<string> st;
+        int n=s.length();
+        string ans;
+        
+        int num=0;
+        for(int i=0;i<n;i++){
+            if(isdigit(s[i])){
+                num=0;
+                while(i<n && isdigit(s[i])){
+                    num= num*10 + s[i]-'0';
+                    i++;
+                }
+                i--;
+                st.push(to_string(num));
+            }
+            else if(s[i]==']'){
+                string temp;
+                while(st.top()!="["){
+                    temp=st.top()+temp;;
+                    st.pop();
+                }
+                st.pop();
+                int num = stoi(st.top());
+                st.pop();
+                string temp2;
+                for(int j=0;j<num;j++){
+                    temp2+=temp;
+                }
+                st.push(temp2);
+                num=0;
+            }
+            else{
+                string temp="";
+                temp+=s[i];
+                st.push(temp);
+            }
+        }
+        while(!st.empty()){
+            string it=st.top();
+            st.pop();
+            ans=it+ans;
+        }
+        return ans;
+    }
