@@ -1,6 +1,7 @@
 void linkdelete(struct Node  *head, int M, int N)
     {
         if(!head) return;
+    
         Node* curr=head;
         Node* prev=head;
         int m=M;
