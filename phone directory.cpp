@@ -22,6 +22,5 @@ vector<vector<string>> displayContacts(int n, string contact[], string s)
             }
             temp2.clear();
         }
-        
         return ans;
     }
