@@ -1,7 +1,7 @@
 int maxProfit(int k, int n, int price[]) {
         if(n<2) return 0;
         int dp[k+1][n];
-        
+ 
         for(int i=0;i<=k;i++) dp[i][0]=0;
         for(int i=0;i<n;i++) dp[0][i]=0;
         
